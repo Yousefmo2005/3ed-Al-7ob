@@ -197,9 +197,10 @@ button {
     border-radius: 50px;
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    color: #FFFFFF33;
+    color: white;
     cursor: pointer;
     font-family: var(--font-arabic);
+    font-width: bold;
     box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -612,3 +613,4 @@ img {
     display: inline-block;
 
 }
+
