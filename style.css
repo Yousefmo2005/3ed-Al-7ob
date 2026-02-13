@@ -478,7 +478,7 @@ img {
     transform: translateY(-50%);
     color: #938d8dce;
     border: none;
-    padding: 10px 15px;
+    margin-top: 30%;
     cursor: pointer;
     font-size: 1.5rem;
     border-radius: 50%;
@@ -612,5 +612,6 @@ img {
     display: inline-block;
 
 }
+
 
 
