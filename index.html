@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef ❤️ Donia</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-hearts" id="bg-hearts"></div>
+    <div class="overlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- PAGE 1: PASSWORD SCREEN -->
+        <section id="password-screen" class="screen active">
+            <div class="glass-card center-content">
+                <div class="glowing-heart-container">
+                    <i class="fa-solid fa-heart glowing-heart"></i>
+                </div>
+                <!-- Arabic text removed as requested -->
+                <h1 class="english-title">Enter Password</h1>
+                <p class="subtitle">Our Love Story</p>
+                
+                <div class="input-group">
+                    <input type="password" id="password-input" placeholder="❤️" maxlength="3">
+                    <button id="unlock-btn" onclick="checkPassword()">💕 Unlock 💕</button>
+                </div>
+                <p id="error-msg" class="error-msg"></p>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT (HIDDEN INITIALLY) -->
+        <div id="main-content" class="hidden">
+            
+            <!-- Header -->
+            <header class="glass-header">
+                <h1>Yousef <span class="heart-pulse">❤️</span> Donia</h1>
+            </header>
+
+            <!-- PAGE 2: LOVE MESSAGE SLIDER -->
+            <section id="love-slider" class="section">
+                <div class="glass-card slider-container">
+                    <div class="slides">
+                        <!-- Slide 1 -->
+                        <div class="slide active">
+                            <h2 class="modern-title">Message for You</h2>
+                            <h3 class="signature">بحبك<br>Donia</h3>
+                            <div class="message-body">
+                                <p>يا أجمل حاجة حصلتلي في الدنيا دي ❤️</p>
+                                <p>كل عيد حب واحنا دايما سوا...</p>
+                                <p>كل لحظة بقضيها معاكي بتبقى ذكرى محفورة في قلبي ومش هنساها أبداً 💗</p>
+                                <p>و إن الكلام مهما كان مش هيوصف حبي ليكي</p>
+                                <p>تعالي نكمل مع بعض ونعيش كل لحظة سوا ⭐</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <div class="message-body">
+                                <p>كل عيد وانتي معايا</p>
+                                <p>مهما هقولك بحبك ازاي مش هوفيكي حقك</p>
+                                <p>معاكي الدنيا أحلى كتير</p>
+                                <p class="highlight">بحبك 💕</p>
+                                <p>يارب دايماً نفضل سوا</p>
+                                <p>ربنا يخليكي ليا</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 3: MUSIC SECTION -->
+            <section id="music-player" class="section">
+                <div class="glass-card music-card">
+                    <div class="disk-container">
+                        <div class="disk" id="disk">
+                            <div class="disk-center"></div>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>علم قلبي الغرام</h3>
+                        <p>عمرو دياب</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" onclick="prevSong()"><i class="fa-solid fa-backward"></i></button>
+                        <button class="control-btn play-btn" onclick="togglePlay()">
+                            <i class="fa-solid fa-play" id="play-icon"></i>
+                        </button>
+                        <button class="control-btn" onclick="nextSong()"><i class="fa-solid fa-forward"></i></button>
+                    </div>
+                    <!-- Hidden Audio Element -->
+                    <audio id="audio-player" loop>
+                        <source src="KdWy8eJOWlI.m4a" type="audio/mp4">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </section>
+
+            <!-- PAGE 4: PHOTO GALLERY -->
+            <section id="gallery" class="section">
+                <div class="glass-card gallery-container">
+                    <h2 class="section-title">Happy Moments</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="3.jpg" alt="Love Photo 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="2.jpg" alt="Love Photo 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="1.jpg" alt="Love Photo 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="4.jpg" alt="Love Photo 4">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 5: LIVE RELATIONSHIP COUNTER -->
+            <section id="counter" class="section">
+                <div class="glass-card counter-card">
+                    <h2 class="section-title">سوا من 7/12/2024 – 4:47 صباحًا 💕</h2>
+                    <div class="timer-grid">
+                        <div class="timer-box">
+                            <span id="days">00</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="timer-box">
+                            <span id="hours">00</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="timer-box">
+                            <span id="minutes">00</span>
+                            <span class="label">Minutes</span>
+                        </div>
+                        <div class="timer-box">
+                            <span id="seconds">00</span>
+                            <span class="label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="glass-footer">
+                <p>Made with ❤️ for Donia</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
